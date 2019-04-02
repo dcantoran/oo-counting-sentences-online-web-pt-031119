@@ -16,7 +16,8 @@ class String
 
   def count_sentences
     punc = self.split(/[.!?]/)
-    punc.grep(/\s/).size
+    punc.delete_if {|sentence| sentence.empty?}
+    punc.length
     
   end
 end
